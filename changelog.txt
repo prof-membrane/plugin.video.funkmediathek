@@ -1,0 +1,24 @@
+1.1.0
+- Upgraded to libmediathek3
+- Added fanart
+- Added icon
+- Added description
+- Added proper support for the kaltura player
+1.0.1
+- Version bump
+1.0.0
+- Switched to JSON interface
+- Added subtitles
+- Added metadata
+- Added option to hide formats
+0.1.0
+- Cleaned up shows
+- Add-on shows every video of a TV show now
+- Improved video loadtime
+- Misc metadata improvements
+- Fixed parsing of some videos
+- Added rules to clean up titles
+0.0.2
+- Small improvements
+0.0.1
+- Initial release

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+	<string id="30001">Einen Eintrag pro Sprache/Show</string>
+	<string id="30002">Originalsprache bevorzugen</string>
+	<string id="30003">Springe direkt zu Serien (verstecke Formate)</string>
+
+	<string id="30500">Sprache: Deutsch</string>
+	<string id="30501">Sprache: Englisch</string>
+	<string id="30503">Formate</string>
+	<string id="30504">Serien</string>
+
+	
+	<!-- messages -->
+</strings>
