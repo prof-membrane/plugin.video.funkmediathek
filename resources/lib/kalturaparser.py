@@ -25,7 +25,6 @@ def getVideoUrl(entryId):
 	url += '&action=' + action
 	
 	n = '1'
-	#"""
 	url += '&'+n+':service=' + one_service
 	url += '&'+n+':action=' + one_action
 	url += '&'+n+':widgetId=' + one_widgetId
@@ -52,6 +51,7 @@ def getVideoUrl(entryId):
 	#url += '&kalsig=' + kalsig
 	
 	response = libMediathek.getUrl(url)
+	libMediathek.log(response)
 	j = json.loads(response)
 	d = {}
 	flavorIds = ''

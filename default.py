@@ -3,9 +3,6 @@ import libmediathek3 as libMediathek
 import xbmc
 import xbmcaddon
 import xbmcplugin
-import xbmcgui
-import json
-import re
 import resources.lib.jsonparser as jsonParser
 import resources.lib.kalturaparser as kalturaParser
 
@@ -13,11 +10,9 @@ base = 'https://www.funk.net'
 
 translation = xbmcaddon.Addon().getLocalizedString
 
-squashShows = xbmcaddon.Addon().getSetting('squashShows') == 'true'
-preferOV = xbmcaddon.Addon().getSetting('preferOV') == 'true'
+#squashShows = xbmcaddon.Addon().getSetting('squashShows') == 'true'
+#preferOV = xbmcaddon.Addon().getSetting('preferOV') == 'true'
 skipToSeries = xbmcaddon.Addon().getSetting('skipToSeries') == 'true'
-
-
 
 def main():
 	if skipToSeries:

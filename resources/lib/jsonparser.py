@@ -32,11 +32,15 @@ def parse(url):
 	
 def _parseSeries(j,type):
 	d = {}
-	d['_name'] = j['attributes']['name']
+	if 'name' in j['attributes']:
+		d['_name'] = j['attributes']['name']
+	else:
+		d['_name'] = j['attributes']['title']
 	d['_thumb'] = j['attributes']['thumbnail']
 	if type == 'series':
 		d['_fanart'] = fanart
-	d['_plot'] = _cleanPlot(j['attributes']['description'])
+	if 'description' in j['attributes']:
+		d['_plot'] = _cleanPlot(j['attributes']['description'])
 	d['_airedISO8601'] = j['attributes']['createdAt']
 	d['url'] = base + '/content/series/' + j['id'] + '?should_filter=false'#
 	d['_rating'] = str(j['attributes']['kickKeepRatio'] * 10)
@@ -45,13 +49,15 @@ def _parseSeries(j,type):
 	return d
 
 def _parseVideo(j):
+	libMediathek.log(str(j))
 	d = {}
 	d['_name'] = j['attributes']['title']
 	
 	d['_thumb'] = j['attributes']['image']['url']
-	d['_plot'] = _cleanPlot(j['attributes']['text'])
-	while '\n\n\n' in d['_plot']:
-		d['_plot'] = d['_plot'].replace('\n\n\n','\n\n')
+	if 'text' in j['attributes']:
+		d['_plot'] = _cleanPlot(j['attributes']['text'])
+		while '\n\n\n' in d['_plot']:
+			d['_plot'] = d['_plot'].replace('\n\n\n','\n\n')
 	d['_duration'] = str(j['attributes']['duration'])
 	if 'season' in j['attributes']:
 		d['_season'] = j['attributes']['season']
